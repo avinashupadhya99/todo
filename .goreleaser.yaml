@@ -1,0 +1,23 @@
+project_name: todo
+builds:
+  - env:
+      - CGO_ENABLED=0
+    main: ./main.go
+    goos:
+      - darwin
+      - linux
+      - windows
+archives:
+  - files:
+      - LICENSE
+checksum:
+  name_template: 'checksums.txt'
+changelog:
+  sort: asc
+  filters:
+    exclude:
+    - '^docs:'
+    - '^test:'
+    - '^build:'
+release:
+  prerelease: true
